@@ -61,3 +61,22 @@ botaoSegundo.addEventListener("click", (event) => {
   botaoPrimeiro.classList.remove("cor");
   botaoSegundo.classList.add("cor");
 });
+
+//ALTERANDO TEMA DA PÁGINA (LIGHT/DARK)
+
+const botaoTheme = document.querySelector("#theme");
+
+let darkTheme = false; //variavel de controle - inicia como false, ou seja, modo escuro desligado
+
+botaoTheme.addEventListener("click", (event) => {
+  darkTheme = !darkTheme; //darkTheme recebe o contrário dele
+  const body = document.querySelector("body");
+
+  if (darkTheme) {
+    body.style.backgroundColor = "black";
+    body.style.colorText = "white";
+  } else {
+    body.style.backgroundColor = "white";
+    body.style.colorText = "black";
+  }
+});
