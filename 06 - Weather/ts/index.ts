@@ -1,3 +1,9 @@
+//const prompt = require('readline-syn') - maneira mais antiga de importar uma biblioteca
+//import prompt from './readline-sync' - maneira mais recente de importar uma biblioteca
+import { saudacao } from "./exemplo.js";
+
+saudacao();
+
 //pegando o form e o input
 const form = document.querySelector("#search-form");
 const input: HTMLInputElement | null =
