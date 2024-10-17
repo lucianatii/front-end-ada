@@ -1,0 +1,3 @@
+Nome: Erick
+Idade: 8 
+Alt: 1.42
