@@ -1,0 +1,6 @@
+Promise: Objeto. Guarda uma promessa de que algo será realizado.
+
+ESTADOS: 
+- Pending: pendente
+- FullFilled: concretizada com sucesso
+- Rejected: rejeitada pq houve um erro
