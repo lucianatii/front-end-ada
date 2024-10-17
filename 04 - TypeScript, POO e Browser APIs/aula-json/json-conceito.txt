@@ -1,0 +1,12 @@
+JSON
+
+O QUE É:
+
+- JavaScript Object Notation - Notação de Objetos JavaScript;
+- Formatação leve de troca de dados;
+- Fácil de ser lido e escrito por humanos;
+- Fácil de ser interpretado e gerado por máquinas;
+- Apesar de ser inspirado em objetos JavaScript, é um formato que independe de linguagem;
+- Utiliza convenções familiares a outras linguagens:
+      - coleção de pares nome:valor (objeto, dicionário, record, struct...)
+      - listas ordenadas de valores (array, lista, vetor, sequencia...)

@@ -1,0 +1,6 @@
+VANTAGENS
+
+1. Fácil leitura/interpretação e escrita/geração;
+2. Maior velocidade na execução e transporte de dados
+3. Arquivo com tamanho reduzido
+4. Fácil de realizar o parsing (conversão do arquivo json de forma que ele seja um arquivo manipulável dentro da linguagem de programação)

@@ -1,0 +1,7 @@
+1. Arquivos de Configuração
+  a. Configurações do VS Code
+  b. package.json
+  c. .prettier.json
+  d. eslint.json
+
+2. A Transferência de Dados entre aplicações: APIs
