@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #222;
+  color: #ebebeb
+}
+
+h1 {
+  margin: 1rem 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+ul#lista {
+  padding: 0 2rem;
+}
