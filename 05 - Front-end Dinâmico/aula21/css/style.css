@@ -1,0 +1,15 @@
+.btn {
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 12px;
+}
+
+.cor {
+  background-color: blueviolet;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 12px;
+}
