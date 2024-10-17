@@ -1,0 +1,15 @@
+CONFIGURAÇOES TYPESCRIPT
+
+1. Inicializar um projeto Node.js (npm init -y)
+
+2. Instalar o TypeScript
+  2.1 instalação global: npm install -g typescript
+  2.2 instalação local (somente dentro do projeto): npm install typescript (posso utilizar -D ao final do código ja que o pacote só será utilizado durante o desenvolvimento)
+
+3. Transpilar o código (converter ts para js): npx tsc meuarquivo.ts
+  3.1 Sempre que o arquivo ts for atualizado, é necessário fazer a transpilação para que o arquivo js seja atualizado no html.  É possível fazer isso manualmente, usando o comando acima, ou posso utilizar o comando: npx tsc meuarquivo.ts --watch (watch detecta novas modificações no arquivo ts e faz as alterações necessárias no arquivo js).
+
+4. Para iniciar um arquivo de configurações do typescript (tsconfig.json), vou utilizar o comando npx tsc --init
+  4.1 Uma vez que iniciei o tsconfig.json, posso utilizar somente npx tsc para compilar o projeto e assim, todos os arquivos ts serao atualizados de uma só vez.
+  
+5. Em tsconfig.json, "Target" é a versão de JS para qual o arquivo TS será transpilado.
