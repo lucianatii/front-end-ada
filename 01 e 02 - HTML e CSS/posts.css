@@ -1,0 +1,98 @@
+#posts {
+  background: #000;
+  color: aliceblue;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.post-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.header-post {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-post h2 {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.header-post a {
+  text-decoration: none;
+  color: aliceblue;
+  padding: 4px;
+}
+
+.header-post a:hover {
+  color: rgb(181, 131, 255);
+}
+
+.cards {
+  margin-top: 20px;
+  gap: 30px;
+  display: flex;
+}
+
+#posts .cards .card-post {
+  background: #141414;
+  padding: 40px 40px;
+}
+
+#posts .cards .card-post h3 {
+  font-size: 1.6rem;
+  color: rgb(181, 131, 255);
+  margin-bottom: 20px;
+  position: relative;
+}
+
+#posts .cards .card-post h3::before {
+  content: "";
+  width: 30px;
+  height: 4px;
+  background: linear-gradient(to left, rgb(181, 131, 255), rgb(255, 90, 216));
+  position: absolute;
+  top: -20px;
+}
+
+#posts .cards .card-post span {
+  color: rgb(181, 131, 255);
+}
+
+#posts .cards .card-post p.date {
+  font-size: 1.125rem;
+  margin-bottom: 20px;
+}
+
+#posts .cards .card-post span {
+  color: rgb(181, 131, 255);
+}
+
+@media (max-width: 700px) {
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}
+
+@media (max-width: 615px) {
+  .card-post {
+    border-radius: 6px;
+  }
+
+  #posts {
+    background: none;
+    margin-top: 15px;
+  }
+
+  .header-post h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #141414;
+  }
+}

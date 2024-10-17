@@ -1,0 +1,39 @@
+@import "./header.css";
+@import "./container.css";
+@import "./posts.css";
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f7f7f7;
+  color: #2a2929;
+}
+
+body,
+button,
+select,
+input,
+textarea {
+  font-family: "Heebo", sans-serif;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+footer {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px 20px;
+
+  display: grid;
+  justify-items: center;
+
+  gap: 5px;
+}

@@ -1,0 +1,68 @@
+#about {
+  max-width: 1000px;
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 40px 20px;
+
+  gap: 30px;
+}
+
+.about-content {
+  width: 600px;
+}
+.about-title {
+  font-size: 2.25rem;
+  color: rgb(181, 131, 255);
+}
+.about-subtitle {
+  font-size: 1.8rem;
+  color: #1d1d1d;
+}
+
+.about-text {
+  text-align: justify;
+}
+
+.about-resume {
+  display: inline-block;
+  text-decoration: none;
+  background: #000;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.about-resume:hover {
+  background: #1d1d1d;
+  transition: 0.2s;
+}
+
+main section#about .about-img {
+  width: 300px;
+  border-radius: 6%;
+}
+
+@media (max-width: 750px) {
+  #about {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  main section#about .about-img {
+    grid-row: 1;
+  }
+}
+
+@media (max-width: 700px) {
+  main section#about .about-img {
+    width: 240px;
+  }
+}
