@@ -17,10 +17,12 @@ body {
   
 }
 
-.container {
+.containerCounter,
+.containerForm {
 display: grid;
 justify-items: center;
 margin-top: 4rem;
+margin-bottom: 1rem;
 gap: 2rem;
 background: #212121;
 padding: 6rem 10rem;
@@ -44,5 +46,16 @@ button {
 .botoes {
   display: flex;
   gap: 1rem
+}
+
+form {
+  display: flex;
+  gap: 0.5rem
+}
+
+input {
+  width: 200px;
+  height: 2rem;
+  border-radius: 4px;
 }
 
