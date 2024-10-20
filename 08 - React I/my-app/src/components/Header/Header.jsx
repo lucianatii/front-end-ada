@@ -1,7 +1,8 @@
 import React from "react";
 import brand from "../../assets/img/brand.png";
+import "../Header/styles.css"
 
-class Header extends React.Component {
+export class Header extends React.Component {
   render() {
     return (
       <header>
@@ -31,4 +32,4 @@ class Header extends React.Component {
   }
 }
 
-export default Header;
+// export default Header;
