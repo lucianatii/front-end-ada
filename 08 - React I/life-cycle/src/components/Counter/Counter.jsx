@@ -13,6 +13,23 @@ class Counter extends React.Component {
 
   componentDidMount() {
     console.log("Componente ja foi montado, ok?");
+
+    //após a montagem do componente, inicie um evento de rolagem de página
+    document.addEventListener("scroll", this.eventScroll)
+    }
+
+    //para adicionar e remover eventos ao montar e desmontar componentes, preciso criar uma função externa e passá-la no componentDidMount e no componentWillUnmount
+
+
+  //método chamado sempre que uma prop ou estado forem atualizados
+  shouldComponentUpdate() {
+
+    return true
+    // return false - o componente nunca será atualizado mesmo que a prop ou estado sejam alterados
+
+    //no momento que o contador for igual a 2, ele nao atualizará o estado e com isso, o numero 3 nao será exibido
+    // if(this.state.contador === 2)return false;
+    //  return true    
   }
 
   UNSAFE_componentWillUpdate() {
@@ -43,6 +60,17 @@ class Counter extends React.Component {
       </div>
     );
   }
+
+  componentWillUnmount(){
+    console.log("Componente será desmontado")
+
+    //removendo evento de rolagem
+    document.removeEventListener("scroll", this.eventScroll)
+  }
+  eventScroll() {
+    console.log("Rolando a página")
+  }
+   
 }
 
 export default Counter;
