@@ -15,6 +15,13 @@ class Counter extends React.Component {
     console.log("Componente ja foi montado, ok?");
   }
 
+  UNSAFE_componentWillUpdate() {
+    console.log("Componente será atualizado");
+  }
+
+  componentDidUpdate(){
+    console.log("O componente foi atualizado")
+  }
 
 
   render() {
