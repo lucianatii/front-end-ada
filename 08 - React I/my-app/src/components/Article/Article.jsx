@@ -1,8 +1,9 @@
 import React from "react";
 import "../Article/styles.css";
 
-export class Article extends React.Component {
-render(){
+// export class Article extends React.Component 
+export function Article (){
+// render(){
   return(
   <article id="article">
       <img src={this.props.thumbnail} alt={this.props.description} />
@@ -15,5 +16,5 @@ render(){
     </article>
   )
 }
-}
+
 
