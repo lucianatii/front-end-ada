@@ -2,8 +2,9 @@ import React from "react";
 import brand from "../../assets/img/brand.png";
 import "../Header/styles.css"
 
-export class Header extends React.Component {
-  render() {
+// export class Header extends React.Component
+export function Header () {
+  // render() {
     return (
       <header>
         <nav id="navBar">
@@ -30,6 +31,6 @@ export class Header extends React.Component {
       </header>
     );
   }
-}
+// }
 
 // export default Header;
