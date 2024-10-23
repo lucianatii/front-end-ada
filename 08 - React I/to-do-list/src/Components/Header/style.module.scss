@@ -1,0 +1,25 @@
+.header {
+  background: green;
+  color: #fff;
+}
+
+.container {
+  max-width: 1240px;
+  padding: 0 2rem;
+  margin: 0 auto;
+
+  //especificando que apenas a primeira div terá os estilos definidos com ":first-child"
+  div:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  div:last-child {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    transform: translateY(50%);
+  }
+}

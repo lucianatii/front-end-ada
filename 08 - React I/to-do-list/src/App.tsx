@@ -1,9 +1,13 @@
-import React from 'react';
-import { Header } from './Components/Header/Header';
+import React from "react";
+
+import { Header } from "./Components/Header/Header";
+import "./Styles/global.css";
 
 function App() {
   return (
-    <Header/>
+    <div>
+      <Header />
+    </div>
   );
 }
 
