@@ -7,4 +7,4 @@
 - CSS
 - JavaScript
 - TypeScript, Programação Orientada a Objetos e Browser API's
-- React
+- React + TypeScript + SASS
