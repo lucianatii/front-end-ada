@@ -1,39 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import "../Contador/styles.css";
 
-export class Contador extends React.Component {
-  constructor() {
-    super();
-    // this.contador = 0;
-    this.state = { contador: 0, name: "", password: "" };
-  }
+// export class Contador extends React.Component
+export function Contador() {
+  // constructor() {
+  //   super();
+  //   // this.contador = 0;
+  //   this.state = { contador: 0, name: "", password: "" };
+  // }
 
-  render() {
-    return (
-      <div>
-        <div className="containerCounter">
-          <h1>time is passing...</h1>
-          <h2>{this.state.contador}</h2>
+  //estrutura do useState
+  //const [estado, funcaoQueAlteraOEstado] = useState(0)
+  const [contador, setContador] = useState(0);
 
-          <div className="botoes">
-            <button
-              onClick={() => {
-                this.setState({ contador: this.state.contador + 1 });
-              }}
-            >
-              Aumentar
-            </button>
-            <button
-              onClick={() => {
-                this.setState({ contador: this.state.contador - 1 });
-              }}
-            >
-              Diminuir
-            </button>
-          </div>
+  return (
+    <div>
+      <div className="containerCounter">
+        <h1>time is passing...</h1>
+        <h2>{contador}</h2>
+
+        <div className="botoes">
+          <button
+            onClick={() => {
+              // this.setState({ contador: this.state.contador + 1 });
+              setContador(contador + 1);
+            }}
+          >
+            Aumentar
+          </button>
+          <button
+            onClick={() => {
+              // this.setState({ contador: this.state.contador - 1 });
+              setContador(contador - 1);
+            }}
+          >
+            Diminuir
+          </button>
         </div>
+      </div>
 
-        <div className="containerForm">
+      {/* <div className="containerForm">
           <h2>pegando valores digitados...</h2>
           <form>
             <input
@@ -54,8 +60,7 @@ export class Contador extends React.Component {
             />
             <button>Send</button>
           </form>
-        </div>
-      </div>
-    );
-  }
+        </div> */}
+    </div>
+  );
 }
