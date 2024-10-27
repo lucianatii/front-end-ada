@@ -19,10 +19,12 @@ export const Tasks: React.FC = () => {
       alert("Não é possível adicionar uma tarefa com menos de 4 caracteres");
       return;
     }
-    setTasks([
+    const newTask = [
       ...tasks, //para pegar as tarefas que ja existem no array
       { id: new Date().getTime(), title: taskTitle, done: false },
-    ]);
+    ];
+    setTasks(newTask);
+    localStorage.setItem("tasks", JSON.stringify(newTask)); //guardando tarefas no localStorage
     setTaskTitle("");
   }
 
