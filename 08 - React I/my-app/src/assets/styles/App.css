@@ -15,7 +15,15 @@ body {
 }
 
 section#articleList {
-  max-width: 900px; 
+  max-width: 900px;
   margin: 0 auto;
   margin-top: 4rem;
+}
+
+.loader {
+  height: 400px;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

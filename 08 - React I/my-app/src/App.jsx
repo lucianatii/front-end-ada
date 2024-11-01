@@ -1,56 +1,54 @@
 import React, { useEffect, useState } from "react";
 import "./assets/styles/App.css";
+import axios from "axios";
 import { Header } from "./components/Header/Header";
 import { Article } from "./components/Article/Article";
-import article1 from "./assets/img/article1.png";
-import article2 from "./assets/img/article2.png";
-import article3 from "./assets/img/article3.png";
+import { ThreeDots } from "react-loader-spinner";
 
 //Componentes em classes são classes que herdam a classe Component do React e retornam HTML dentro do método render
 //Componentes funcionais são funcões que retornam HTML
 
 function App() {
-  const [news, setNews] = useState();
+  const [news, setNews] = useState([]);
 
   useEffect(() => {
-    fetch();
+    async function loadNews() {
+      const response = await axios.get(
+        "https://api.spaceflightnewsapi.net/v4/articles"
+      );
+      const { results } = response.data;
+
+      setNews(results);
+    }
+    loadNews();
   }, []);
 
-  //render é um método responsável por renderizar todo o conteudo HTML do nosso componente
-
   return (
-    //tag genérica fragment <></>
     <>
       <Header />
 
       <section id="articleList">
-        <Article
-          title="Designing Dashboards"
-          provider="NASA"
-          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum non, quos magni odio distinctio ipsam sequi consequuntur quo aspernatur at obcaecati eveniet quidem maxime vero beatae ad est atque quia!"
-          thumbnail={article1}
-        />
-
-        <Article
-          title="Vibrant Portraits of 2020"
-          provider="SpaceNews"
-          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum non, quos magni odio distinctio ipsam sequi consequuntur quo aspernatur at obcaecati eveniet quidem maxime vero beatae ad est atque quia!"
-          thumbnail={article2}
-        />
-
-        <Article
-          title="36 Days of Malayalam type"
-          provider="SpaceFlight Now"
-          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum non, quos magni odio distinctio ipsam sequi consequuntur quo aspernatur at obcaecati eveniet quidem maxime vero beatae ad est atque quia!"
-          thumbnail={article3}
-        />
-
-        <Article
-          title="Designing Dashboards"
-          provider="NASA"
-          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum non, quos magni odio distinctio ipsam sequi consequuntur quo aspernatur at obcaecati eveniet quidem maxime vero beatae ad est atque quia!"
-          thumbnail={article1}
-        />
+        {news.length === 0 ? (
+          <div class="loader">
+            <ThreeDots
+              height="80"
+              width="80"
+              radius="9"
+              color="deepskyblue"
+              ariaLabel="loading"
+            />
+          </div>
+        ) : (
+          news.map((article) => (
+            <Article
+              key={article.id}
+              title={article.title}
+              thumbnail={article.image_url}
+              provider={article.news_site}
+              description={article.summary}
+            />
+          ))
+        )}
       </section>
     </>
   );

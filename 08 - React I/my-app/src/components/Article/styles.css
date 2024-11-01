@@ -6,19 +6,25 @@
 
 h2 {
   font-size: 1.8rem;
-  font-weight:700;
+  font-weight: 700;
   color: #fff;
-  margin-bottom: 0.8rem;  
+  margin-bottom: 0.8rem;
 }
 
 h3 {
-  color: #8695A4;
+  color: #8695a4;
   font-size: 1.2rem;
   font-weight: 400;
-  margin-bottom: 0.8rem;  
+  margin-bottom: 0.8rem;
 }
 
 p {
   font-size: 1rem;
-  color: #fff
+  color: #fff;
+}
+
+#article img {
+  max-width: 370px;
+  border-radius: 4px;
+  object-fit: cover;
 }
