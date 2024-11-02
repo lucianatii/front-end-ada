@@ -1,31 +1,30 @@
-import { InputHTMLAttributes, useEffect, useRef, useState } from "react";
+import { FormEvent, useRef } from "react";
 
 export const Refs: React.FC = () => {
-  const inputRef = useRef<HTMLInputElement>(null); //{current: 0}
-  // console.log(inputRef);
+  const inputNameRef = useRef<HTMLInputElement>(null); //{current: 0}
+  const inputEmailRef = useRef<HTMLInputElement>(null);
+  const inputPasswordRef = useRef<HTMLInputElement>(null);
 
-  // useEffect(() => {
-  //   console.log(inputRef);
-  // }, [inputRef]);
-
-  function handleOnClick() {
-    if (inputRef.current) {
-      inputRef.current.focus(); //colocando o foco no input utilizando a referencia inputRef
-    }
+  function handleOnSubmit(event: FormEvent) {
+    event.preventDefault();
+    console.log(inputNameRef.current?.value);
+    console.log(inputEmailRef.current?.value);
+    console.log(inputPasswordRef.current?.value);
   }
 
   return (
-    <div>
+    <form
+      style={{ padding: "2rem" }}
+      onSubmit={(event) => handleOnSubmit(event)}
+    >
       <h1>useRef</h1>
 
       {/* <p>{`O valor da Ref é ${ref.current}`}</p> */}
       <br />
-      <input type="text" placeholder="Nome Completo" ref={inputRef} />
-      <button onClick={handleOnClick}>Foque no Input</button>
-      <br />
-      {/* <button onClick={() => setToggle(!toggle)}>Toggle</button> */}
-
-      {/* refs nao disparam novas renderizações, por isso, seu valor continua estático na tela do usuário */}
-    </div>
+      <input type="text" placeholder="Nome Completo" ref={inputNameRef} />
+      <input type="email" placeholder="E-mail" ref={inputEmailRef} />
+      <input type="password" placeholder="Password" ref={inputPasswordRef} />
+      <button type="submit">Submeter</button>
+    </form>
   );
 };
