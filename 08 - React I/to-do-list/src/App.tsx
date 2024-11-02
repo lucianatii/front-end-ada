@@ -1,6 +1,7 @@
 import { Header } from "./Components/Header/Header";
 import "./Styles/global.css";
 import { Tasks } from "./Components/Tasks/Tasks";
+import { Refs } from "./Components/Concepts/Refs";
 
 function App() {
   // const [toggle, setToggle] = useState(false);
@@ -16,9 +17,10 @@ function App() {
   //useEffect será disparado sempre que uma variável do array for alterada
   //Por padrão será disparado sempre após a montagem de um componente (equivalente a componentDidMount)
   return (
-    <div>
+    <div style={{ padding: "2rem" }}>
       <Header />
       <Tasks />
+      <Refs />
 
       {/* <button onClick={() => setToggle(!toggle)}>Toggle</button> */}
     </div>

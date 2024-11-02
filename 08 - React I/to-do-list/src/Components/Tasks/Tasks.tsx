@@ -1,4 +1,4 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import style from "./style.module.scss";
 
 interface Task {
@@ -25,8 +25,21 @@ export const Tasks: React.FC = () => {
     ];
     setTasks(newTask);
     localStorage.setItem("tasks", JSON.stringify(newTask)); //guardando tarefas no localStorage
+    //JSON.Stringfy pq o localStorage não guarda arrays, então preciso transformar o array de tarefas em string
     setTaskTitle("");
   }
+
+  //primeiro parametro do useEffect: função ()={}, segundo parametro: [] array de dependencias
+  useEffect(() => {
+    const tasksOnLocalStorage = localStorage.getItem(
+      "tasks" /*nome que eu dei para minhas tarefas guardadas no localStorage*/
+    );
+
+    if (tasksOnLocalStorage) {
+      //JSON.parse pq quero meu array de tarefas de volta para poder fazer o setTasks
+      setTasks(JSON.parse(tasksOnLocalStorage));
+    }
+  }, []);
 
   return (
     <section className={style.container}>
