@@ -2,6 +2,7 @@ import { Header } from "./Components/Header/Header";
 import "./Styles/global.css";
 import { Tasks } from "./Components/Tasks/Tasks";
 import { Refs } from "./Components/Concepts/Refs";
+import { Memorization } from "./Components/Concepts/Memo";
 
 function App() {
   // const [toggle, setToggle] = useState(false);
@@ -20,7 +21,10 @@ function App() {
     <div style={{ padding: "2rem" }}>
       <Header />
       <Tasks />
-      <Refs />
+      {/* <Refs /> */}
+      <Memorization
+        financialData={{ incomes: [50, 20, 30], outcomes: [20, 5, 12] }}
+      />
 
       {/* <button onClick={() => setToggle(!toggle)}>Toggle</button> */}
     </div>
