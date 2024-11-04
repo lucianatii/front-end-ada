@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 interface memorizarionProps {
   financialData: {
@@ -13,13 +13,19 @@ export const Memorization: React.FC<memorizarionProps> = ({
   //estado que define se os valores devem ser mostrados ou não
   const [showValues, setShowValues] = useState(true);
 
-  const totalIncomes = financialData.incomes.reduce((total, income) => {
-    return (total += income);
-  }, 0);
+  const totalIncomes = useMemo(() => {
+    return financialData.incomes.reduce((total, income) => {
+      console.log("Calculando Receitas");
+      return (total += income);
+    }, 0);
+  }, [financialData.incomes]);
 
-  const totalOutcomes = financialData.outcomes.reduce((total, outcome) => {
-    return (total += outcome);
-  }, 0);
+  const totalOutcomes = useMemo(() => {
+    return financialData.outcomes.reduce((total, outcome) => {
+      console.log("Calculando Despesas");
+      return (total += outcome);
+    }, 0);
+  }, [financialData.outcomes]);
 
   console.log("Renderização do componente...");
 
