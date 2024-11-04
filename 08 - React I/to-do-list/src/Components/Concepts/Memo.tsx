@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 
 interface memorizarionProps {
   financialData: {
@@ -29,6 +29,15 @@ export const Memorization: React.FC<memorizarionProps> = ({
 
   console.log("Renderização do componente...");
 
+  const aplicarDesconto = useCallback(
+    (desconto: number) => {
+      return totalOutcomes * (1 - desconto);
+    },
+    [totalOutcomes]
+  );
+
+  aplicarDesconto(20);
+
   return (
     <div style={{ padding: "2rem" }}>
       <h1>Memorization</h1>
@@ -39,6 +48,7 @@ export const Memorization: React.FC<memorizarionProps> = ({
       <br />
       <p>{`Total de Despesas: R$ ${showValues ? totalOutcomes : "•••"}`}</p>
       <br />
+
       <button onClick={() => setShowValues(!showValues)}>
         {showValues ? "Ocultar Valores" : "Mostrar Valores"}
       </button>
